@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>FirstApp</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    
+  
+  </head>
+
+  <body style="background: #f5f5f5;">
+    <p class="alert"><%= alert %></p>
+    <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <span class="glyphicon glyphicon-cloud"></span>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Home</a></li>
+        <li><a href=/shopping_cart/all >Products</a></li>
+        
+        <li><a href="#">Contact</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+       <li>
+       <div>
+        <div class="dropdown">
+             <button class="btn btn-primary dropdown-toggle" type="button" id="menu1" data-toggle="dropdown" style="background: #101010;
+             padding-bottom: 14px;
+             border-color: #101010;
+             padding-top: 14px;">
+             <% if current_user%>
+                  <%= current_user.email%>
+             <% elsif current_seller %>
+               <%= current_seller.email%>
+               <%else %>
+             <%end%> <span class="caret"></span></button>
+             <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+               <li role="presentation"><a role="menuitem" tabindex="-1" href="#">
+                    <% if user_signed_in? %>
+                 <%= link_to 'ACCOUNT' , edit_user_registration_path%>            
+               <%elsif seller_signed_in? %>
+                  
+                 <%= link_to 'ACCOUNT' , edit_seller_registration_path%>
+
+                
+               <% else %>
+
+                 <% end %></a></li>
+               <li role="presentation"><a role="menuitem" tabindex="-1" href="#">SETTING</a></li>
+               <li role="presentation"><a role="menuitem" tabindex="-1" href="#"><% if user_signed_in? %>
+               <%= link_to 'LOGOUT' , destroy_user_session_path, method: :DELETE %>
+                 
+           <%elsif seller_signed_in? %>
+              
+             || <%= link_to 'LOGOUT' , destroy_seller_session_path, method: :DELETE %>
+            
+           <% else %>
+
+             <% end %></li>
+               <li role="presentation" class="divider"></li>
+               <li role="presentation"><a role="menuitem" tabindex="-1" href="#">About Us</a></li>
+             </ul>
+           </div>
+           </li>
+                 <li><a href=/orders/all ><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
+
+               </ul>
+    </div>
+    </div>
+  </div>
+</nav>
+  	
+    
+    <%= yield %>
+  </body>
+</html>

@@ -1,0 +1,22 @@
+ 
+ <h1 style="text-align: center; color: #337ab7">PRODUCTS</h1>
+
+ 
+
+<div class="container">   
+
+  <% @products.each do |article| %>
+  <div class="col-sm-4">
+      <div id="img">
+      <%= link_to (image_tag article.avatar.url),product_path(article)%>
+      </div>
+      
+      <td><%= link_to 'show or buy' ,product_path(article) %></td>
+      
+  </div>
+<% end %>  
+</div>
+<ul class="pager">
+    <li class="previous"><a href="./">Previous</a></li>
+    
+  </ul>

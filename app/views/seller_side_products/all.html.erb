@@ -1,0 +1,32 @@
+ <h1 style="text-align: center; color: #337ab7">PRODUCTS</h1>
+ <br><br>
+<div class="container">
+ <table>
+ 	<tr><th>SERIAL NO</th>
+ 	<th>PRODUCT NAME:</th>
+    <th>PRICE:</th>
+    <th>UNITS:</th>
+    <th>TOTAL PRICE</th><th>VIEW</th>
+    <th></th>
+<th></th>
+ 	</tr>
+ <% @product_seller.each do |article| %>
+    <tr><td><%= article.id %></td>
+      <td><%= article.pro_name %></td>
+      <td><%= article.price %></td>
+      <td><%= article.units %></td>
+  	  <td><%= article.units*article.price %></td>
+  	  
+      <td><%= link_to (image_tag article.avatar.url(:thumb)) ,seller_side_product_path(article) %></td>
+      <td><%= link_to 'edit' ,edit_seller_side_product_path(article) %></td>
+      <td><%= link_to 'destroy' ,seller_side_product_path(article),  method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>  </tr>
+  <% end %>
+    
+ </table>
+ </div>
+
+ <ul class="pager">
+    <li class="previous"><a href="./new">Previous</a></li>
+    <li class="next"><a href="./">Next</a></li>
+  </ul>

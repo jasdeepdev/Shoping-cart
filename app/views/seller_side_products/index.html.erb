@@ -1,0 +1,21 @@
+<h1 style="text-align: center;     color: #337ab7;">
+  Welcome to the Seller app
+<br><br><br><br>
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+
+<%= form_for :cart do |f| %>
+ <h1><a href=/seller_side_products/new class="btn btn-default btn-block"   role="button">ADD NEW PRODUCT</a></h1>
+ <h1><a href=/seller_side_products/all class="btn btn-default btn-block"  role="button">SHOW ALL PRODUCTS</a></h1>
+</div>
+<% end %>
+
+<ul class="pager">
+    <li class="previous"><a href="./new">Previous</a></li>
+    <li class="next"><a href="./">Next</a></li>
+  </ul>

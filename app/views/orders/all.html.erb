@@ -1,0 +1,46 @@
+
+
+ <div class="container">
+  <h2 style="text-align: center; color: #337ab7;">FINAL ORDER</h2>
+  <br><br><br>
+                                                                                       
+  <div class="table-responsive">          
+  <table class="table">
+    <thead>
+ 	<tr><th>ID</th>
+ 	<th>PRODUCT NAME:</th>
+    <th>PRICE:</th>
+    <th>UNITS:</th>
+    <th>TOTAL PRICE</th>
+ 	</tr>
+ </thead><% a= 0%>
+  <% b= 0%>
+  <tbody> <% @orders.each do |article| %>
+    <tr>
+      <td><%= b+=1%></td>
+      <td><%= link_to (article.pro_name), orders_path(article)%></td>
+      <td><%= article.price %></td>
+      <td><%= article.units %></td>
+  	  <td><%= article.units*article.price %></td>
+  	  <% a= article.units*article.price + a%>
+    </tr><%end%>
+    <td></td>
+  <th style="font-size: xx-large;">GRAND TOTAL</th>
+  <td></td>
+  <td></td>
+  <td style="font-size: xx-large; background: #337ab7; color: blanchedalmond"><%= a%></td>
+  
+ </tr>
+</tbody>
+</table>
+
+ <%= link_to 'Back', product_index_path%>
+      
+  
+ </div>
+
+
+<ul class="pager">
+    <li class="previous"><a href="./new">Previous</a></li>
+    <li class="next"><a href="./">Next</a></li>
+  </ul>

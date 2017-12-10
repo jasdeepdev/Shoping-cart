@@ -1,0 +1,41 @@
+ <h1 style="text-align: center; color: #337ab7">PRODUCTS</h1>
+
+
+
+  <div class="table-responsive" style="padding-left: 50px;
+    padding-right: 50px;">          
+  <table class="table" >
+    <thead>
+  <tr>
+  <th>PRODUCT NAME:</th>
+    <th>PRICE:</th>
+    <th>UNITS:</th>
+    <th>TOTAL PRICE</th>
+  </tr>
+ </thead><% a= 0%>
+  <% b= 0%>
+  <tbody> 
+    <tr>
+
+      <td><%= @order.pro_name %></td>
+      <td><%= @order.price %></td>
+      <td><%= @order.units %></td>
+      <td><%= @order.units*@order.price %></td>
+      <td><%= link_to 'Back',product_orders_path %></td>
+      
+
+    <td>
+</tbody>
+</table>
+
+
+
+ <%= link_to 'Back', product_index_path%>
+      
+  
+ </div>
+
+ <ul class="pager">
+    <li class="previous"><a href="./new">Previous</a></li>
+    <li class="next"><a href="./">Next</a></li>
+  </ul>

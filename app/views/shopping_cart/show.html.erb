@@ -1,0 +1,43 @@
+<div>
+
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</div>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+<b>
+    <h1 style="text-align: center; font-family: fantasy;">PRODUCTS</h1> 
+     <div class="row" style="padding-left: 131px; font-family: fantasy;">
+
+          <div class="col-sm-6" >
+            <h3>PRODUCT NAME: <%= @products.pro_name %></h3>
+            <h3>PRICE: <%= @products.price %></h3>
+            <h3>UNITS: <%= @products.units %></h3>
+               <h3>TOTAL PRICE</h3>
+              <h3><%= @products.units*@products.price %></h3>
+            </div>
+       
+<div class="col-sm-4" style="float: right"><%= image_tag @products.avatar.url %></div>
+</div>
+
+<br><br><br>
+<p>
+    <h1> <a href=/shopping_cart/all class="btn btn-default btn-block" role="button">'Back'</a></h1>
+  </p>
+</b>
+</h1>
+ 
+<ul class="pager">
+    <li><a href="./new">Previous</a></li>
+    <li ><%= link_to 'ADD TO CART' , new_product_order_path(@products)%></li>
+</ul>

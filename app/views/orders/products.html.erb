@@ -1,0 +1,43 @@
+
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<h1>
+
+    <h1 style="text-align: center">PRODUCTS</h1> 
+<div class="container" >
+  <div class="col-sm-6" style="float: left">
+  
+<table>
+   <tr>
+    <th>PRODUCT NAME:</th>    
+    <td><%= @order_product.pro_name %></td>
+   </tr>
+   <tr> 
+    <th>PRICE:</th>   
+    <td><%= @order_product.price %></td>  
+   </tr>
+   <tr> 
+    <th>TOTAL PRICE</th>    
+    <th><%= @order_product.units*@order_product.price %></th>
+   </tr>  
+</table>
+  </div>
+ 
+    <div class="col-sm-6" style="float: right"><%= image_tag @order_product.avatar.url %></div>
+<br><br><br>
+</div>
+<p>
+    <h1> <a href="./all" class="btn btn-default btn-block" role="button">'Back'</a></h1>
+  </p>
+
+</h1>
+ 
+
+ <ul class="pager">
+    <li class="previous"><a href="./new">Previous</a></li>
+    <li class="next"><a href="./">Next</a></li>
+  </ul>
